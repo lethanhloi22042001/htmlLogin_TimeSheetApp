@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import '../../public/css/views/loginApp.css';
 import { UserOutlined, LockOutlined,  } from '@ant-design/icons';
 import { Button, } from 'antd';
@@ -27,7 +27,23 @@ const LoginApp: React.FC<LoginProps> = ()=>{
 
     //Today
     const [username,setUsername] = useState<string>('');
-    const [passowrd,setPassword] = useState<string>('');
+    const [password,setPassword] = useState<string>('');
+
+    useEffect( ()=>{
+      const usernameValue =  watch('userName');
+      const passwordValue =  watch('passWord');
+      if (usernameValue !== username) {
+        setUsername(usernameValue);
+        console.log(username);
+        
+      }
+  
+      if (passwordValue !== password) {
+        setPassword(passwordValue);
+        console.log(password);
+      }
+
+    },[username] );
 
     const [isLabelActiveEmail,setIsLabelActiveEmail] = useState<boolean>(false);
     const [isLabelActivePassWord,setIsLabelActivePassWord] = useState<boolean>(false);
@@ -45,7 +61,7 @@ const LoginApp: React.FC<LoginProps> = ()=>{
       }
     
     const handleClickBlurPassword = () => {
-        if (passowrd === '') {
+        if (password === '') {
             setIsLabelActivePassWord(false);
           }
       }
@@ -59,7 +75,6 @@ const LoginApp: React.FC<LoginProps> = ()=>{
         console.log('password',e.target.value);
       }
 
-    
     return(
         <>
 
@@ -75,12 +90,13 @@ const LoginApp: React.FC<LoginProps> = ()=>{
                          <div className="inputEnter" >
                             <label htmlFor="userName">User name or Email</label>
                             <input  
-                                // {...register("userName")}
+                                {...register("userName")}
                                 type="text" name="userName" id="userName" 
-                                value={username}
-                                onChange={handleOnchangeEmail}
-                                onFocus={handleClickEmail}
-                                onBlur={handleClickBlurEmail}
+
+                                // value={username}
+                                // onChange={handleOnchangeEmail}
+                                // onFocus={handleClickEmail}
+                                // onBlur={handleClickBlurEmail}
                             />
 
                          </div>
@@ -93,12 +109,12 @@ const LoginApp: React.FC<LoginProps> = ()=>{
                          <div className="inputEnter">
                             <label htmlFor="passWord">PassWord</label>
                             <input   
-                            //  {...register("passWord" )}
+                             {...register("passWord" )}
                              type="password" name="passWord" id="passWord" 
-                             value={passowrd}
-                            onChange={handleOnchangePassWord}
-                            onFocus={handleClickPassword}
-                             onBlur={handleClickBlurPassword}
+                            //  value={password}
+                            // onChange={handleOnchangePassWord}
+                            // onFocus={handleClickPassword}
+                            //  onBlur={handleClickBlurPassword}
                             />
                          </div>
                      </div>
@@ -108,8 +124,8 @@ const LoginApp: React.FC<LoginProps> = ()=>{
                             <input type="checkbox" id='rememberBtn' name="rememberBtn"/>
                             <label htmlFor="rememberBtn">Remember me</label>
                         </div>
-                        <Button className="btn_button">Login</Button>
-                        {/* <input className="btn_button" type="submit" /> */}
+                        {/* <Button className="btn_button">Login</Button> */}
+                        <input className="btn_button" type="submit" />
                      </div>
 
                      <div className="loginGG">

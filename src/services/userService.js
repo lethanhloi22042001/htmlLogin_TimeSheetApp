@@ -19,18 +19,17 @@ const deleteNewUserService = (userId) => {
   return axios.delete("/api/delete-user", { data: { id: userId } });
 };
 const updateUser = (userId) => {
-  return axios.put("/api/edit-user", userId );
+  return axios.put("/api/edit-user", userId);
 };
 
 //Lấy toàn bộ type của AllCode
 const getAllCode = (role) => {
-  
   return axios.get(`/api/getallcode?type=${role}`);
 };
 
-// 
+//
 const getTopDoctorService = (limit) => {
-  return axios.get(`/api/top-doctor-home?limit=${limit}`)
+  return axios.get(`/api/top-doctor-home?limit=${limit}`);
 };
 // Lấy Toàn Bộ Bác Sĩ
 const getAllDoctor = () => {
@@ -39,10 +38,8 @@ const getAllDoctor = () => {
 
 // Lưu Thông Tin Chi Tiết Một Bác Sĩ
 const SaveInfoDoctor = (data) => {
-  return axios.post(`/api/save-info-doctor`,data);
+  return axios.post(`/api/save-info-doctor`, data);
 };
-
-
 
 //Láy Tin Chi Tiết Một Bác Sĩ + Thông Tin MarkDown
 
@@ -53,24 +50,24 @@ const getDetailInfoDoctor = (data) => {
 //Láy Tin Chi Tiết Một Bác Sĩ + Thông Tin MarkDown
 
 const getSelectedOption = (dataId) => {
-  return axios.get(`/api/getSelectedOption`,dataId);
+  return axios.get(`/api/getSelectedOption`, dataId);
 };
 
 const saveBulkScheduleDoctor = (data) => {
-  return axios.post('/api/bulk-create-schedule', data)
-}
+  return axios.post("/api/bulk-create-schedule", data);
+};
 const getScheduleDoctorByDate = (doctorId, date) => {
-  return axios.get(`/api/get-schedule-doctor-by-date?doctorId=${doctorId}&date=${date}`)
-}
+  return axios.get(
+    `/api/get-schedule-doctor-by-date?doctorId=${doctorId}&date=${date}`
+  );
+};
 const getExtraInfoDoctorById = (doctorId) => {
-  return axios.get(`/api/get-extra-info-doctor-by-id?doctorId=${doctorId}`)
-}
+  return axios.get(`/api/get-extra-info-doctor-by-id?doctorId=${doctorId}`);
+};
 
 const getProfileDoctorById = (doctorId) => {
-  return axios.get(`/api/get-profile-doctor-by-id?doctorId=${doctorId}`)
-}
-
-
+  return axios.get(`/api/get-profile-doctor-by-id?doctorId=${doctorId}`);
+};
 
 export {
   handleLoginApi,
@@ -87,5 +84,4 @@ export {
   getScheduleDoctorByDate,
   getExtraInfoDoctorById,
   getProfileDoctorById,
-
 };
