@@ -1,25 +1,17 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import LoginApp from './views/login-logout/LoginApp';
+import Counter from './features/counter/Counter';
+import AlluserTsx from './features/userAll/AlluserTsx';
+import Form_hook from './Form_hook';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   <>
+      <LoginApp></LoginApp>
+      {/* <Counter></Counter> */}
+      {/* <AlluserTsx></AlluserTsx> */}
+      {/* <Form_hook></Form_hook> */}
+   </>
   );
 }
 
