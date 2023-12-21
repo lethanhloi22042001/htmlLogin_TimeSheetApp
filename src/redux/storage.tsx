@@ -1,11 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit'
 import counterReducer from '../features/counter/counterSlice'
 import Alluser from '../features/userAll/Alluser'
-
+import { Login_Form } from '../views/login-logout/sliceLogin'
+import { useDispatch } from 'react-redux'
 export const store = configureStore({
   reducer: {
     counter: counterReducer,
     Alluser : Alluser,
+    Login_Form:Login_Form,
   },
 })
 
@@ -13,3 +15,4 @@ export const store = configureStore({
 export type RootState = ReturnType<typeof store.getState>
 // Inferred type: {posts: PostsState, comments: CommentsState, users: UsersState}
 export type AppDispatch = typeof store.dispatch
+export const useAppDispatch = ()=> useDispatch<AppDispatch>()

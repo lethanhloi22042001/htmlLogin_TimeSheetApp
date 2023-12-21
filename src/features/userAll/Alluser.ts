@@ -44,7 +44,6 @@ export const Alluser = createSlice({
       console.log('getAllUser',);
       state.todoList = [...state.todoList];
       },
-     
       //=========== Filter ===========
       getFilters : (state, action: PayloadAction<TodoItem>) => {
       state.filters = { search:'Change', status:'Change', priority: [],}
