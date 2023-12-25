@@ -1,12 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit'
-import counterReducer from '../features/counter/counterSlice'
-import Alluser from '../features/userAll/Alluser'
 import { Login_Form } from '../views/login-logout/sliceLogin'
 import { useDispatch } from 'react-redux'
 export const store = configureStore({
   reducer: {
-    counter: counterReducer,
-    Alluser : Alluser,
     Login_Form:Login_Form,
   },
 })

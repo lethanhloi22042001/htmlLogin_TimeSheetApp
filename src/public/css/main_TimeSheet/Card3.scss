@@ -1,0 +1,56 @@
+.top_cardbody3{
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     .textH2{
+        color:#111111 ;
+        font-family: Roboto ;
+        font-size: 18px ;
+        grid-area: auto ;
+        line-height: 19.8px ;
+     }
+     .button_left_top_cardbody3{
+        display: flex;
+        align-items: center;
+        .Chungbutton_left_top_cardbody3{
+            margin-left: 20px;
+            label{
+                margin-right: 10px;
+                color:#555555 ;
+                font-family: Roboto ;
+                font-size: 14px ;
+                font-weight: 700 ;
+                grid-area: auto ;
+                line-height: 20px ;
+            }
+        }
+     }
+     .cardbody3Total{
+        color:#111111 ;
+        font-family: Roboto ;
+        font-size: 18px ;
+        grid-area: auto ;
+        line-height: 19.8px ;
+        text-align:left ;
+     }
+     .right_left_top_cardbody3{
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         .left_right_left_top_cardbody3{
+            max-width: 400px;
+            color: #0000ff ;
+            font-family: Roboto ;
+            font-size: 14px ;
+            grid-area: auto ;
+            line-height: 20px ;
+            text-align:left ;
+         }
+         .right_right_left_top_cardbody3{
+
+         }
+     }
+}
+.bot_cardbody3{
+   padding: 15px 15px 5px;
+}

@@ -1,0 +1,54 @@
+.top_cardbody2{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 20px;
+    .left_top_cardbody2{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .c2div{
+            color: #111111 ;
+            font-family: Roboto ;
+            font-size: 18px ;
+            grid-area: auto ;
+            line-height: 19.8px ;
+        }
+
+        .select_left_top_cardbody2{
+            margin-left: 20px;
+           
+            label{
+                margin-right: 10px;
+                color: #555555 ;
+                font-size: 14px ;
+                font-weight: 700 ;
+                line-height:20px ;
+            }
+        }
+
+    }
+}
+.bot_cardbody2{
+    padding: 15px 15px 5px;
+     //customize
+     .ant-table-wrapper{
+        .ant-spin-nested-loading{
+            .ant-spin-container{
+                .ant-table{
+
+                }
+                //xoá button số trang phía dưới
+                ul{
+                    display: none;
+                }
+                
+                .ant-table-cell{
+                    text-align: center;
+                    padding: 2px 0 0 0;
+                    // background-color: bisque;
+                }
+            }
+        }
+     }
+}

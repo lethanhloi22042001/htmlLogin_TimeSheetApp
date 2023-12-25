@@ -1,18 +1,25 @@
 import React from 'react';
-// import LoginApp from './views/login-logout/LoginApp';
-import Counter from './features/counter/Counter';
-import AlluserTsx from './features/userAll/AlluserTsx';
-import Form_hook from './Form_hook';
 import LoginApp from './views/login-logout/LoginApp';
-
+import Main_TimeSheet from './views/main_TimeSheet/Main_TimeSheet';
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Outlet,
+  Navigate,
+  useLocation,
+} from "react-router-dom";
 function App() {
   return (
-   <>
-      <LoginApp></LoginApp>
-      {/* <Counter></Counter> */}
-      {/* <AlluserTsx></AlluserTsx> */}
-      {/* <Form_hook></Form_hook> */}
-   </>
+    // <div className="App">
+      <BrowserRouter>
+          <Routes>
+            <Route path="/login" element={ <LoginApp/> } />
+            <Route path="/login/app" element={ <Main_TimeSheet/>  } />
+
+          </Routes>
+      </BrowserRouter>
+    // </div>
   );
 }
 
