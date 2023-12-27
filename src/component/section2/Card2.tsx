@@ -10,13 +10,14 @@ import { Select, Space } from 'antd';
 import { Table, Tag } from 'antd';
 import type { ColumnsType } from 'antd/es/table';
 import '../../public/css/main_TimeSheet/Card2.scss'
+import { useSelector } from "react-redux";
+import { RootState } from "../../redux/storage";
 
 const Card2: React.FC = () => { 
 
   const handleChange_select_left_top_cardbody2_Section2 = (value: string) => {
     console.log(`selected handleChange_select_left_top_cardbody2_Section2 ${value}`);
   };
-  //today
   interface timeWorking{
     time_Worked: number;
     time_Checkin:number|string;
@@ -87,7 +88,8 @@ const Card2: React.FC = () => {
     // {key: '2',name: 'Jim Green',age: 40,address: 'London Park',},
     // { key: '1', name: 'John Brown', age: 32, address: 'New York Park', col3: 'Tue Value' },
   ];
- 
+
+  
     return (
       <>
         <div className="top_cardbody2">

@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit'
 import { Login_Form } from '../views/login-logout/sliceLogin'
+import { Card1TimeSheet } from '../component/section1/sliceCard1'
 import { useDispatch } from 'react-redux'
 export const store = configureStore({
   reducer: {
     Login_Form:Login_Form,
+    Card1TimeSheet:Card1TimeSheet,
   },
 })
 

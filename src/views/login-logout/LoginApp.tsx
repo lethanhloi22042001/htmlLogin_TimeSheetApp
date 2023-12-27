@@ -9,7 +9,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { ThunkDispatch } from "redux-thunk";
 import { postUser, } from "./sliceLogin";
 import {Navigate,useNavigate} from 'react-router-dom'
-
+//New
+// import {userAllCard1} from '../../component/section1/sliceCard1'
 
 
 interface LoginProps {}
@@ -28,6 +29,8 @@ const LoginApp: React.FC<LoginProps> = () => {
   } = useForm<ILogin_Form>();
 
   const dispatch = useAppDispatch();
+  //New
+  
   const navigate = useNavigate();
 
   const submitForm = async (data: any) => {
@@ -39,11 +42,15 @@ const LoginApp: React.FC<LoginProps> = () => {
     try {
       const res = await dispatch(postUser(body));
       unwrapResult(res);
+      console.log('res',res);
+      
       navigate('app');
     } catch (error) {
       console.log(error);
     }
   };
+
+  
 
   return (
     <>

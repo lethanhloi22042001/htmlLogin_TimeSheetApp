@@ -34,85 +34,100 @@ const Card3: React.FC = () => {
   
   const columns: ColumnsType<DataType> = [
     {
-      title: 'Name',
+      title: 'Date',
       dataIndex: 'name',
       key: 'name',
-      width: 100,
-      fixed: 'left',
-      filters: [
-        {
-          text: 'Joe',
-          value: 'Joe',
-        },
-        {
-          text: 'John',
-          value: 'John',
-        },
-      ],
-    //   onFilter: (value: string, record) => record.name.indexOf(value) === 0,
+      width: 25,
     },
     {
-      title: 'Other',
+      title: 'Registration Hours',
+      width:20,
       children: [
         {
-          title: 'Age',
-          dataIndex: 'age',
-          key: 'age',
-          width: 150,
-          sorter: (a, b) => a.age - b.age,
+          title: 'Check in',
+          dataIndex: 'building',
+          key: 'building',
+          width: 20,
         },
         {
-          title: 'Address',
-          children: [
-            {
-              title: 'Street',
-              dataIndex: 'street',
-              key: 'street',
-              width: 150,
-            },
-            {
-              title: 'Block',
-              children: [
-                {
-                  title: 'Building',
-                  dataIndex: 'building',
-                  key: 'building',
-                  width: 100,
-                },
-                {
-                  title: 'Door No.',
-                  dataIndex: 'number',
-                  key: 'number',
-                  width: 100,
-                },
-              ],
-            },
-          ],
+          title: 'Check out',
+          dataIndex: 'number',
+          key: 'number',
+          width: 20,
         },
       ],
     },
     {
-      title: 'Company',
+      title: 'Checking time',
+      width:20,
       children: [
         {
-          title: 'Company Address',
-          dataIndex: 'companyAddress',
-          key: 'companyAddress',
-          width: 200,
+          title: 'Check in',
+          dataIndex: 'building',
+          key: 'building',
+          width:20,
         },
         {
-          title: 'Company Name',
-          dataIndex: 'companyName',
-          key: 'companyName',
+          title: 'Check out',
+          dataIndex: 'number',
+          key: 'number',
+          width:20,
         },
       ],
     },
     {
-      title: 'Gender',
-      dataIndex: 'gender',
-      key: 'gender',
-      width: 80,
-      fixed: 'right',
+      title: 'Tracker Time',
+      dataIndex: 'name',
+      key: 'name',
+      width: 25,
+    },
+    {
+      title: 'Result',
+      width:20,
+      children: [
+        {
+          title: 'Check in late',
+          dataIndex: 'building',
+          key: 'building',
+          width: 20,
+        },
+        {
+          title: 'Check out early',
+          dataIndex: 'number',
+          key: 'number',
+          width: 20,
+        },
+      ],
+    },
+    {
+      title: 'Edited by',
+      dataIndex: 'name',
+      key: 'name',
+      width: 25,
+    },
+    {
+      title: 'Punishment Money',
+      dataIndex: 'name',
+      key: 'name',
+      width: 25,
+    },
+    {
+      title: 'Complain',
+      dataIndex: 'name',
+      key: 'name',
+      width: 25,
+    },
+    {
+      title: 'Complain Reply',
+      dataIndex: 'name',
+      key: 'name',
+      width: 25,
+    },
+    {
+      title: 'Action',
+      dataIndex: 'name',
+      key: 'name',
+      width: 25,
     },
   ];
   
@@ -120,7 +135,7 @@ const Card3: React.FC = () => {
   for (let i = 0; i < 100; i++) {
     data.push({
       key: i,
-      name: 'John Brown',
+      name: '23/12/2023',
       age: i + 1,
       street: 'Lake Park',
       building: 'C',
@@ -177,8 +192,9 @@ const Card3: React.FC = () => {
                 columns={columns}
                 dataSource={data}
                 bordered
-                size="middle"
-                scroll={{ x: 'calc(700px + 50%)', y: 240 }}
+                size="small"
+                // scroll={{ x: 'calc(700px + 50%)', y: 240 }}
+                scroll={{ x: 1300 }}
             />
         </div>
      </>

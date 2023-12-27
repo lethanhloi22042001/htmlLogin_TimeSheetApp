@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from "react";
+import { RootState, useAppDispatch } from '../../redux/storage';
+import { Login_Form } from "../login-logout/sliceLogin";
+import { useDispatch, useSelector } from "react-redux";
 import {Navigate,useNavigate} from 'react-router-dom'
 import "../../public/css/main_TimeSheet/Main_TimeSheet.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {faPeopleGroup,faClock, faUser,faArrowUp,faFile,faFlag,faEllipsisVertical,faCalendarDay,faCalendarXmark } from "@fortawesome/free-solid-svg-icons";
 // New
 import 'materialize-css/dist/css/materialize.min.css';
+import { GetAllTimeSheetOfUser } from "../../services/userService";
 
 //ant desgine
 import {  ArrowLeftOutlined ,ArrowRightOutlined,PlusOutlined,DeleteOutlined} from '@ant-design/icons'; //Icon
@@ -21,11 +25,12 @@ import Card2 from "../../component/section2/Card2";
 import Card3 from "../../component/section3/Card3";
 const Timesheet = require('../../public/picture/Timesheet.png');
 const avaT = require('../../public/picture/avaT.jpeg');
+//Today
 
 const Main_TimeSheet: React.FC = () => {
+    const dispatch = useAppDispatch();
     //ant desgine
     const [size, setSize] = useState<SizeType>('large');
-
     // const operations = <Button>Extra Action</Button>; // t2-cn
     const TabPane = Tabs.TabPane;
 
@@ -44,13 +49,16 @@ const Main_TimeSheet: React.FC = () => {
         setIsModalOpen(false);
     };
     //Select
-    const handleChange_select_left_top_cardbody2_Section2 = (value: string) => {
-        console.log(`selected handleChange_select_left_top_cardbody2_Section2 ${value}`);
-      };
+   //Today
+   
+  
+
+      
   return (
     <>
        <div className="main">
-            {/*TOP  */}
+            {/*TOP Header - Sidebar - Main -Fo0ter  */}
+            
             <div className="top_main">
                     <div className="top_logo">
                         <img src={Timesheet} alt="Timesheet Image" className="logo_img" />
@@ -65,7 +73,7 @@ const Main_TimeSheet: React.FC = () => {
                     </div>
                  
             </div> {/* top_main */}
-            {/* BOT */}
+            {/* BOT  */}
             <div className="bot_main">
                 {/* Bên Trái */}
                 <div className="bot_left">

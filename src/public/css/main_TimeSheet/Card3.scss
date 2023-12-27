@@ -53,4 +53,12 @@
 }
 .bot_cardbody3{
    padding: 15px 15px 5px;
+   colgroup{
+      text-align: center;
+   }
+   .ant-spin-container{
+      ul{
+         display: none;
+      }
+   }
 }
